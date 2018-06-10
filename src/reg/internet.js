@@ -15,3 +15,29 @@
 
 
  // scripts脚本标签解析
+
+
+
+
+
+ // 判断ua是不是某个浏览器
+ let uaMap = {
+   'android-browser': //,
+   'xiaomi-browser': //,
+   'safari-browser': //,
+   'chrome-browser': //,
+   'firefox-browser': //,
+   'edge-browser': //,
+   'ie-browser': //,
+   'qq-browser': //,
+   'uc-browser': //,
+   'qq-app': //,
+   'wechat-app': //,
+ }
+
+let desktop = []
+
+
+
+// cookie
+export const cookie = //
