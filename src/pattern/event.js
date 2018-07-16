@@ -16,19 +16,34 @@ class EventEmiiter {
 
   on (type, listener) {
     let typeLists = this.listners[type] = this.listners[type] || []
-    typeLists.push(listener)
+    if (typeLists.indexOf(listener) === -1) {
+      typeLists.push(listener)
+    }
+  }
+
+  off (type, listener) {
+    let typeLists = this.listners[type]
+    if (Array.isArray(typeLists)) {
+      if (listener) {
+        typeLists.splice(typeLists.indexOf(listener), 1)
+      }
+      else {
+        this.listners[type].length = 0
+      }
+    }
   }
 
   emit (type) {
+    let [type, ...args] = arguments
     let typeListeners = this.listners[type] || []
     for (let i = 0, fn; fn = typeListeners[i++];) {
-      typeListeners.apply(this, [].slice.call(arguments, 1))
+      typeListeners.apply(this, args)
     }
   }
 }
 
 
-export
+export {EventEmiiter}
 
 
  // 创建一个具有发布订阅事件的能力的类
