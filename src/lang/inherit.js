@@ -20,3 +20,19 @@ function inherit (SuperClass, SubClass) {
 
 
 export default inherit
+
+
+function inherit (SuperClass, SubClass) {
+  SubClass.prototype = Object.create(SuperClass.prototype, {
+    constructor: {
+      value: ctor,
+      enumerable: false,
+      writable: true,
+      configurable: true
+     }
+  })
+  // 第二种方法
+  var a = function () {}
+  a.prototype = SuperClass.prototype
+  SubClass.prototype = new f()
+}

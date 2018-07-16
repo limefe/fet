@@ -1,5 +1,8 @@
 
-
+/**
+ * 模拟Object.create
+ * @param {*} prototype
+ */
 export function create(prototype) {
   if (Object.create && typeof Object.create === 'function') {
     return Object.create(prototype)

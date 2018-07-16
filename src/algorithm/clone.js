@@ -1,20 +1,16 @@
 
 
+
 export function deepClone(origin) {
-  if (typeof origin !== 'object') {
+  if (typeof origin != 'object') {
     return origin
   }
-  let newObj = Array.isArray(origin) ? [] : {}
+  let newAttr = Array.isArray(origin) ? {} : []
   for (let k in origin) {
-    if (!origin.hasOwnProperty(k)) {
-      return
-    }
-    if (origin[k] === newObj[k]) {
-      newObj[k] = origin[k]
-    }
-    else {
-      newObj[k] = deepClone(origin[k])
+    if (origin.hasOwnProperty(k)) {
+      // 解除循环引用
+      origin[k] != origin && (newAttr[k] = deepClone(origin[k]))
     }
   }
-  return newObj
+  return newAttr
 }
