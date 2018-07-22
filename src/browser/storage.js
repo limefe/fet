@@ -9,7 +9,7 @@
 export const localStorage = {
   setItem(k, v) {
     try {
-      v && (v = JSON.stringify(v)) // 这样可以防止把undefine和null进行JSON序列化
+      v && (v = JSON.stringify(v)) // 这样可以防止把undefine和null进行JSON序列化(其实没必要，因为直接设置null到存储跟stringify之后的null是一样的，都会变成字符串的null)
       window.localStorage.setItem(k, v)
     }
     catch (err) {

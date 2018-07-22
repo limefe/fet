@@ -1,7 +1,10 @@
-/**
- * 事件发布订阅模式
+/*
+ * @file: 事件发射器（事件发射订阅模式）
+ * @Author: sheldoncui(websheldoncui@gmail.com)
+ * @Date: 2018-07-21 14:07:51
+ * @Last Modified by: sheldoncui
+ * @Last Modified time: 2018-07-21 14:13:33
  */
-
 
 import inherit from '../lang/inherit'
 
@@ -60,3 +63,5 @@ export function getEventSuperClass() {
   return aClass
 }
 
+
+// 备注: 要实现once, 参考 https://github.com/ecomfe/saber-emitter/blob/master/test/spec/emitter.js
