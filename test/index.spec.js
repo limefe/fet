@@ -1,24 +1,14 @@
-import index from '../src/index'
-import {expect} from 'chai'
+import fet from '../src/index'
+import { expect } from 'chai'
 
-
-describe('类型方面的测试', function () {
-
-  it('index is a object', function () {
-    expect(index).to.be.an.instanceof(Object);
-  });
-
-});
-
-
-describe('方法方面的测试', function () {
-
-  it('index.add is a function', function () {
-    expect(index.add).to.be.an.instanceof(Function);
-  });
-
-  it('index.sub is a function', function () {
-    expect(index.sub).to.be.an.instanceof(Function);
-  });
-
-});
+describe('fet 的测试', function() {
+  it('fet is a object', function() {
+    expect(fet).to.be.an.instanceof(Object)
+  })
+  it('fet.string is a Object', function() {
+    expect(fet.string).to.be.an.instanceof(Object)
+  })
+  it('fet.lang is a Object', function() {
+    expect(fet.lang.Promise).to.be.an.instanceof(Object)
+  })
+})

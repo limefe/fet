@@ -3,17 +3,21 @@
  * @Author: sheldoncui(websheldoncui@gmail.com)
  * @Date: 2018-07-14 21:13:02
  * @Last Modified by: sheldoncui
- * @Last Modified time: 2018-07-14 21:13:45
+ * @Last Modified time: 2018-08-04 00:55:47
  */
 
 import { expect } from 'chai' // 断言库
-import search from '../src/string/search'
+import string from '../src/string'
 
-describe('search模块的测试', () => {
-  it('add is a function', () => {
-    expect(add).to.be.an.instanceof(Function)
+// 套件
+describe('fet.string 模块的测试', () => {
+  // 用例
+  it('string.trim 去除留白测试', () => {
+    expect(string.trim(' abc ')).to.equal('abc')
   })
-  it('2 + 4 = 6', () => {
-    expect(add(2, 4)).equal(6);
+  // 用例
+  it('string.version.compare 测试', () => {
+    expect(string.version.compare('1.0.0', '1.0.1')).to.equal(-1)
+    expect(string.version.compare('1.0.2', '0.3.3')).to.equal(1)
   })
-});
+})

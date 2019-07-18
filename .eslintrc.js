@@ -4,6 +4,7 @@ module.exports = {
     node: true, // 开启 node 全局变量
     es6: true, // 开启 es6 全局变量 如 Set
     jquery: true, // jquery 全局变量
+    mocha: true // mocha 全局变量
   },
   extends: [
     'plugin:vue/recommended',
