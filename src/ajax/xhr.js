@@ -1,13 +1,3 @@
-
-
-
-function createXHR() {
-  if (XMLHttpRequest) {
-    return new XMLHttpRequest()
-  }
-  if (ActiveXObject) {
-    return new ActiveXObject('MSXML2.XMLHttp')
-  }
-}
+import { createXHR } from './createXHR'
 
 export default createXHR
