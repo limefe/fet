@@ -4,9 +4,9 @@
  * @date 2018-06-05
  */
 
-import {type} from '../lang/type'
+import { type } from '../lang/type'
 
-
+// eslint-disable-next-line no-unused-vars
 class Router {
   // 构造函数
   constructor(config) {
@@ -19,14 +19,12 @@ class Router {
   // 初始化路由配置
   _init(config) {
     this._rules = [] // 路由规则
-    this.mode = (config.mode === 'history' && !!(history.pushState)) ? 'history' : 'hash'
+    this.mode = config.mode === 'history' && !!history.pushState ? 'history' : 'hash'
     config.rules && config.rules.forEach(this.add) // 遍历、编译并添加路由规则
   }
 
   // 开启路由监听
-  start() {
-
-  }
+  start() {}
 
   // add 动态增加路由项. path, name, handler
   add(rule) {
@@ -36,26 +34,14 @@ class Router {
     if (!rule.name) {
       rule.name = rule.path
     }
-
   }
 
   // remove 动态删减路由项
-  remove() {
-
-  }
+  remove() {}
 
   // go 动态编程导航
-  go() {
-
-  }
-
+  go() {}
 }
-
-
-
-
-
-
 
 // var Router = function (router, iframeSelector) {
 //   this.router = router

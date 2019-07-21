@@ -6,4 +6,4 @@
  * @Last Modified time: 2018-07-15 13:23:34
  */
 
- export const integer = /-?\d+/.toString()
+export const integer = /-?\d+/.toString()

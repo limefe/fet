@@ -10,17 +10,17 @@
  *  实现一个简单的发布订阅器。由于只有一个data change的消息，因此不需要区分消息名了
  *
  */
-var _Dep = function () {
+var _Dep = function() {
   this.subs = []
 }
 // 消息发布
-_Dep.prototype.notify = function () {
-  this.subs.forEach(sub=>{
+_Dep.prototype.notify = function() {
+  this.subs.forEach(sub => {
     sub.update()
   })
 }
 // 消息订阅
-_Dep.prototype.addSub = function (sub) {
+_Dep.prototype.addSub = function(sub) {
   this.subs.push(sub)
 }
 
@@ -34,12 +34,12 @@ function Observer(data) {
 }
 
 // walk建立setter监听
-Observer.prototype.walk = function (data) {
-  Object.keys(this.data).forEach(k=>{
+Observer.prototype.walk = function(data) {
+  Object.keys(this.data).forEach(k => {
     this.defineReactive(this.data, k)
   })
 }
-Observer.prototype.defineReactive = function (data, k) {
+Observer.prototype.defineReactive = function(data, k) {
   var dep = new _Dep()
   if (data[k] && typeof data[k] === 'object') {
     this.walk(data[k])
@@ -55,9 +55,7 @@ Observer.prototype.defineReactive = function (data, k) {
         dep.notify()
       }
     },
-    get() {
-
-    }
+    get() {},
   })
 }
 

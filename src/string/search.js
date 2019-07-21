@@ -3,7 +3,7 @@
  * @Author: sheldoncui(websheldoncui@gmail.com)
  * @Date: 2018-07-14 21:11:54
  * @Last Modified by: sheldoncui
- * @Last Modified time: 2018-07-14 21:12:52
+ * @Last Modified time: 2018-08-04 00:55:33
  */
 
 /**
@@ -15,7 +15,7 @@
  */
 export function search(substr, str) {
   let pos = str.indexOf(substr)
-  let positions = []
+  const positions = []
   while (pos > -1) {
     positions.push(pos)
     pos = str.indexOf(substr, pos + 1)

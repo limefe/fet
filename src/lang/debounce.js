@@ -13,16 +13,15 @@
  * @desc 节流应用: 要实现元素的贴顶效果，例如多屏的商城，用户滑到下面查看商品详情时，"评论""规格"这几个tab应该吸顶。你要监听页面的scroll事件来去让tab在移出屏幕时吸顶。但scroll事件太多，你需要节流
  */
 
-
 /**
  * 函数去抖
  * @param {Function} 要去抖的函数
  *
- * 理解记忆: 去抖跟时间无关
+ * 理解记忆: 去抖是函数的触发在不确定的时候发生，触发时间跟设置的这个500毫秒时间无关（500毫秒只是它在最后一个人上电梯后的最多等待时间）
  */
 export function debounce(fn) {
   let timer = null
-  return function () {
+  return function() {
     clearTimeout(timer)
     timer = setTimeout(fn.bind(this), 500)
   }

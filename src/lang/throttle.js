@@ -25,7 +25,7 @@
  */
 export function throttle(fn, duration) {
   let preTime = Date.now()
-  return function () {
+  return function() {
     if (Date.now() - preTime >= duration) {
       setTimeout(fn.bind(this), 0) // 这里用setTimeout合适吗，会不会event事件一直触发导致无法执行目标函数呢?
       preTime = Date.now()

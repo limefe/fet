@@ -7,7 +7,6 @@
   * tips 所有配置的相对路径，都是基于你的项目根目录。请使用相对路径，或者最前面直接不写路径。例如./src就表示项目根目录下的src
 */
 
-
 module.exports = {
   entry: 'src/index.js', // 入口文件名，可以使用符合webpack entry规范的对象来写
   outputPath: 'dist', // 输出目录
@@ -16,10 +15,8 @@ module.exports = {
   libraryTarget: 'umd', // 导出的模块化方式
   devport: '9090', // 开发模式的devServer端口号
   publicPath: '/', // dev-server的公共访问目录
-  externals: []
+  externals: [],
 }
-
-
 
 // module.exports = {
 //   base: {

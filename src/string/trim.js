@@ -14,5 +14,5 @@
  * @return 左右去掉空内容后的字符串
  */
 export function trim(str) {
-  return str.replace(/^([\s\t\xa0\u3000)+|[\s\t\xa0\u3000]+$/, '')
+  return str.replace(/(^[\s\t\xa0\u3000]+)|([\s\t\xa0\u3000]+$)/g, '')
 }

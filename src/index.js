@@ -3,12 +3,12 @@ import algorithm from './algorithm'
 import lang from './lang'
 import math from './math'
 import monitor from './monitor'
-import page from './page'
 import pattern from './pattern'
 import reg from './reg'
 import router from './router'
 import time from './time'
 import ua from './ua'
+import string from './string'
 
 export default {
   ajax,
@@ -16,10 +16,10 @@ export default {
   lang,
   math,
   monitor,
-  page,
   pattern,
   reg,
   router,
   time,
-  ua
+  ua,
+  string,
 }

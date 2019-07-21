@@ -1,9 +1,9 @@
 {
-  "name": "felib-template",
+  "name": "fet",
   "version": "1.0.0",
   "description": "a frontend tools kit",
-  "author": "felib",
-  "main": "dist/felib.js",
+  "author": "sheldoncui",
+  "main": "dist/fet.js",
   "files": [
     "src",
     "dist"
@@ -14,11 +14,23 @@
     "dev1": "node build/dev-server.js",
     "dev2": "webpack-dev-server --open --inline --progress --config build/webpack.dev.config.js",
     "devbuild": "cross-env NODE_ENV=development node build/build.js",
+    "lint": "eslint --fix --ext .js,.vue ./src",
+    "test": "mocha --require babel-core/register --colors ./test/**/*.spec.js",
     "build": "cross-env NODE_ENV=production node build/build.js",
-    "test": "mocha --require babel-core/register --colors --watch --watch-extensions js ./test/*.spec.js"
+    "lint-ci": "eslint --ext .js,.vue ./test",
+    "test-ci": "npm run test",
+    "build-ci": "cross-env BUILD_ENV=CI npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "dependencies": {},
   "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -26,17 +38,30 @@
     "chai": "^4.1.2",
     "chalk": "^2.4.1",
     "cross-env": "^5.1.5",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^5.2.3",
     "express": "^4.16.3",
+    "husky": "^3.0.0",
     "kitty-lang": "https://github.com/cuiyongjian/kitty-lang",
+    "lint-staged": "^9.2.0",
     "mocha": "^5.1.1",
     "ora": "^1.4.0",
+    "prettier": "^1.18.2",
     "semver": "^5.5.0",
     "shelljs": "^0.7.8",
     "shx": "^0.2.2",
     "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.3",
+    "webpack-cli": "^3.3.6",
     "webpack-dev-middleware": "^3.1.3",
-    "webpack-dev-server": "^3.1.4",
+    "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.1.2"
   },
   "repository": {

@@ -1,20 +1,18 @@
+/* eslint-disable no-constant-condition */
 /**
  * @file 加载外部资源
  * @author sheldoncui<websheldoncui@gmail.com>
  * @date 2018-06-08
  */
 
-
-let _loadScript = function (src, callback, errFun, isCrossOrigin) {
-if (!/(http|https):\/\/[\w.-_]+/) {
+const _loadScript = function(src, callback, errFun, isCrossOrigin) {
+  if (!/(http|https):\/\/[\w.-_]+/) {
     return
   }
-  let s = document.createElement('script')
+  const s = document.createElement('script')
   s.src = src // 脚本来源
   s.async = 'async' // 异步加载
-  isCrossOrigin && (s.crossOrigin = 'anonymous')
-  (typeof errFun == 'function') && (s.onerror = errFun)
-  (typeof callback == 'function') && (s.onload = callback)
+  isCrossOrigin && (s.crossOrigin = 'anonymous')(typeof errFun === 'function') && (s.onerror = errFun)(typeof callback === 'function') && (s.onload = callback)
   s.onload = callback
   s.onerror = errFun
   document.head.appendChild('s')
@@ -31,6 +29,3 @@ export default function loadScript(src, isCrossOrigin) {
     _loadScript(src, resolve, reject, isCrossOrigin)
   })
 }
-
-
-

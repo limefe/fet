@@ -1,19 +1,15 @@
-
-
 /**
  * 读取cookie
  * @param {String} name cookie名称
  */
 export function getCookie(name) {
-  let reg = new RegExp(`(^| )${name}=([^;]*)($|;)`)
-  let matchArr = reg.exec(document.cookie)
+  const reg = new RegExp(`(^| )${name}=([^;]*)($|;)`)
+  const matchArr = reg.exec(document.cookie)
   if (matchArr && matchArr.length) {
     return decodeURIComponent(matchArr[2])
   }
   return null
 }
-
-
 
 /**
  * 设置cookie
@@ -22,6 +18,6 @@ export function getCookie(name) {
  * @param {Number} maxAge cookie有效时长 单位秒
  */
 export function setCookie(name, value, maxAge) {
-  let expireTime = new Date(Date.now() + maxAge)
+  const expireTime = new Date(Date.now() + maxAge)
   document.cookie = `${name}=${value};path=/${expireTime ? `;expires=${expireTime.toUTCString()}` : ''}`
 }
