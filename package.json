@@ -48,7 +48,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.2.3",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "husky": "^3.0.0",
     "kitty-lang": "https://github.com/cuiyongjian/kitty-lang",
     "lint-staged": "^9.2.0",
